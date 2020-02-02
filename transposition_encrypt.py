@@ -9,7 +9,7 @@ def main():
 
     cipher_text = encrypt_message(my_key, my_message)
 
-    print(cipher_text + '|')
+    print(repr(cipher_text))
     pyperclip.copy(cipher_text)
 
 
