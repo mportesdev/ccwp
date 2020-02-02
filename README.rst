@@ -1,0 +1,1 @@
+Exercises for the book `Cracking Codes with Python <https://nostarch.com/crackingcodes/>`_.
