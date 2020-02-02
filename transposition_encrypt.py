@@ -14,14 +14,7 @@ def main():
 
 
 def encrypt_message(key, message):
-    cipher_columns = [''] * key
-
-    for column in range(key):
-        current_index = column
-
-        while current_index < len(message):
-            cipher_columns[column] += message[current_index]
-            current_index += key
+    cipher_columns = [message[column::key] for column in range(key)]
 
     return ''.join(cipher_columns)
 
