@@ -16,7 +16,7 @@ def main():
 def decryptMessage(key, message):
     numOfColumns = int(math.ceil(len(message) / float(key)))
     numOfRows = key
-    numOfShadedBoxes = (numOfColumns * numOfRows) - len(message)
+    numOfShadedBoxes = numOfColumns * numOfRows - len(message)
 
     plaintext = [''] * numOfColumns
 
@@ -27,8 +27,8 @@ def decryptMessage(key, message):
         plaintext[column] += symbol
         column += 1
 
-        if (column == numOfColumns) or (column == numOfColumns - 1 and
-                                        row >= numOfRows - numOfShadedBoxes):
+        if column == numOfColumns or (column == numOfColumns - 1 and
+                                      row >= numOfRows - numOfShadedBoxes):
             column = 0
             row += 1
 
