@@ -1,6 +1,8 @@
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
-import math, pyperclip
+import math
+
+import pyperclip
 
 
 def main():
@@ -9,7 +11,7 @@ def main():
 
     plaintext = decrypt_message(my_key, my_message)
 
-    print(plaintext + '|')
+    print(f'{plaintext!r}')
     pyperclip.copy(plaintext)
 
 
