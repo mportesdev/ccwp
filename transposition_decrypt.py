@@ -42,7 +42,18 @@ if __name__ == '__main__':
 
     print(repr(decrypt_message(9, 'Uhot  on ahoamdakef pe  r harhtesunnur'
                                   ' wgyegewie,aeean t  sec')))
+    print(repr(decrypt_message(9, 'Tteeshiefheydtaplaad  :telst ct    t arh'
+                                  'Fwaf.gsueoanur n rsdlutcm   lnhhatrf ')))
+    print(repr(decrypt_message(9, 'T atg:renishtwhr nfogperaeeO t hynoy wnt,'
+                                  'mt. t w eh o ttfih earyheoniayneoedrdgc d'
+                                  ' uy   hol m ')))
 
     print(repr(decrypt_message(9, 'H cb  irhdeuousBdi   prrtyevdgp nir  '
                                   'eerit eatoreechadihf paken ge b te dih aoa.'
                                   'da tts tn')))
+    print(repr(decrypt_message(9, 'A b  drottthawa nwar eci t nlel ktShw leec,'
+                                  'hheat .na  e soogmah a  ateniAcgakh'
+                                  ' dmnor  ')))
+    print(repr(decrypt_message(9, "Bmmsrl dpnaua!toeboo'ktn uknrwos. yaregonr w"
+                                  " nd,tu  oiady hgtRwt   A hhanhhasthtev  e"
+                                  " t e  eo")))

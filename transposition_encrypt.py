@@ -24,3 +24,8 @@ if __name__ == '__main__':
 
     print(repr(encrypt_message(9, 'Underneath a huge oak tree there was of'
                                   ' swine a huge company,')))
+    print(repr(encrypt_message(9, 'That grunted as they crunched the mast: For'
+                                  ' that was ripe and fell full fast.')))
+    print(repr(encrypt_message(9, 'Then they trotted away for the wind grew'
+                                  ' high: One acorn they left, and no more'
+                                  ' might you spy.')))
