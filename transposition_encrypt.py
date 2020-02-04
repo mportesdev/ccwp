@@ -9,7 +9,7 @@ def main():
 
     cipher_text = encrypt_message(my_key, my_message)
 
-    print(repr(cipher_text))
+    print(f'{cipher_text!r}')
     pyperclip.copy(cipher_text)
 
 
@@ -21,3 +21,6 @@ def encrypt_message(key, message):
 
 if __name__ == '__main__':
     main()
+
+    print(repr(encrypt_message(9, 'Underneath a huge oak tree there was of'
+                                  ' swine a huge company,')))

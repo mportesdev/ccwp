@@ -39,3 +39,10 @@ def decrypt_message(key, message):
 
 if __name__ == '__main__':
     main()
+
+    print(repr(decrypt_message(9, 'Uhot  on ahoamdakef pe  r harhtesunnur'
+                                  ' wgyegewie,aeean t  sec')))
+
+    print(repr(decrypt_message(9, 'H cb  irhdeuousBdi   prrtyevdgp nir  '
+                                  'eerit eatoreechadihf paken ge b te dih aoa.'
+                                  'da tts tn')))
