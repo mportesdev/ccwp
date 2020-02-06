@@ -1,1 +1,1 @@
-Exercises for the book `Cracking Codes with Python <https://nostarch.com/crackingcodes/>`_.
+Exercises for the book `Cracking Codes with Python <https://nostarch.com/crackingcodes/>`_ by @asweigart.
