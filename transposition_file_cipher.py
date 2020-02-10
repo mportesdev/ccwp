@@ -25,9 +25,8 @@ def main():
         if not response.lower().startswith('c'):
             sys.exit()
 
-    file_obj = open(input_filename)
-    content = file_obj.read()
-    file_obj.close()
+    with open(input_filename) as input_file:
+        content = input_file.read()
 
     print(f'{my_mode.title()}ing...')
 
@@ -39,9 +38,8 @@ def main():
     total_time = round(time.time() - start_time, 2)
     print(f'{my_mode.title()}ion time: {total_time} seconds')
 
-    output_file_obj = open(output_filename, 'w')
-    output_file_obj.write(translated)
-    output_file_obj.close()
+    with open(output_filename, 'w') as output_file:
+        output_file.write(translated)
 
     print(f'Done {my_mode}ing {input_filename} ({len(content)} characters).')
     print(f'{my_mode.title()}ed file is {output_filename}.')
