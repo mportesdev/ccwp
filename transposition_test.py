@@ -1,6 +1,7 @@
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
 import random
+from string import ascii_uppercase
 import sys
 
 import transposition_decrypt
@@ -11,11 +12,9 @@ def main():
     random.seed(42)
 
     for i in range(20):
-        message = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' * random.randint(4, 40)
-        message = list(message)
-
-        random.shuffle(message)
-        message = ''.join(message)
+        message_letters = random.choices(ascii_uppercase,
+                                         k=random.randint(100, 1000))
+        message = ''.join(message_letters)
 
         print(f'Test #{i + 1}: {message[:50]!r}')
 
