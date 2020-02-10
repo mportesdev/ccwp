@@ -22,19 +22,13 @@ def get_english_count(message):
     if possible_words == []:
         return 0.0
 
-    matches = 0
-    for word in possible_words:
-        if word in ENGLISH_WORDS:
-            matches += 1
+    matches = sum(word in ENGLISH_WORDS for word in possible_words)
     return matches / len(possible_words)
 
 
 def remove_non_letters(message):
-    letters_only = []
-    for symbol in message:
-        if symbol in LETTERS_AND_SPACE:
-            letters_only.append(symbol)
-    return ''.join(letters_only)
+    return ''.join(symbol for symbol in message
+                   if symbol in LETTERS_AND_SPACE)
 
 
 def is_english(message, word_percentage=20, letter_percentage=85):
