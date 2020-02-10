@@ -6,11 +6,10 @@ LETTERS_AND_SPACE = ascii_letters + ' \t\n'
 
 
 def load_dictionary():
-    dictionary_file = open('dictionary.txt')
-    english_words = {}
-    for word in dictionary_file.read().split('\n'):
-        english_words[word] = None
-    dictionary_file.close()
+    with open('dictionary.txt') as dictionary_file:
+        english_words = {}
+        for word in dictionary_file.read().split('\n'):
+            english_words[word] = None
     return english_words
 
 
