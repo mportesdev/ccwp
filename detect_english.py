@@ -1,7 +1,8 @@
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
-UPPER_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-LETTERS_AND_SPACE = UPPER_LETTERS + UPPER_LETTERS.lower() + ' \t\n'
+from string import ascii_letters
+
+LETTERS_AND_SPACE = ascii_letters + ' \t\n'
 
 
 def load_dictionary():
