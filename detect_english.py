@@ -7,7 +7,7 @@ LETTERS_AND_SPACE = ascii_letters + ' \t\n'
 
 def load_dictionary():
     with open('dictionary.txt') as dictionary_file:
-        english_words = {line.strip(): None for line in dictionary_file}
+        english_words = {line.strip() for line in dictionary_file}
     return english_words
 
 
