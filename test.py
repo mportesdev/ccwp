@@ -1,3 +1,5 @@
+import os
+
 import pytest
 
 from transposition_file_cipher import translate_file
@@ -13,3 +15,6 @@ def test_transposition_file_cipher(name):
     with open(f'{name}.txt') as original_file, \
             open(f'{name}_encrypted_decrypted.txt') as roundtrip_file:
         assert original_file.read() == roundtrip_file.read()
+
+    os.remove(f'{name}_encrypted.txt')
+    os.remove(f'{name}_encrypted_decrypted.txt')
