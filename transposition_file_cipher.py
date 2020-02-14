@@ -8,11 +8,8 @@ import transposition_decrypt
 import transposition_encrypt
 
 
-def main():
-    input_filename = 'frankenstein.txt'
+def main(input_filename, my_key, my_mode):
     output_filename = 'frankenstein.encrypted.txt'
-    my_key = 10
-    my_mode = 'encrypt'
 
     if not os.path.exists(input_filename):
         print(f'The file {input_filename!r} does not exist. Quitting...')
@@ -46,4 +43,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    main('frankenstein.txt', 10, 'encrypt')
