@@ -9,7 +9,8 @@ import transposition_encrypt
 
 
 def main(input_filename, my_key, my_mode):
-    output_filename = 'frankenstein.encrypted.txt'
+    stem, suffix = os.path.splitext(input_filename)
+    output_filename = f'{stem}_{my_mode}ed{suffix}'
 
     if not os.path.exists(input_filename):
         print(f'The file {input_filename!r} does not exist. Quitting...')
@@ -38,8 +39,8 @@ def main(input_filename, my_key, my_mode):
     with open(output_filename, 'w') as output_file:
         output_file.write(translated)
 
-    print(f'Done {my_mode}ing {input_filename} ({len(content)} characters).')
-    print(f'{my_mode.title()}ed file is {output_filename}.')
+    print(f'Done {my_mode}ing {input_filename!r} ({len(content)} characters).')
+    print(f'{my_mode.title()}ed file is {output_filename!r}.')
 
 
 if __name__ == '__main__':
