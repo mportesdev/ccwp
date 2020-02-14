@@ -9,19 +9,9 @@ import transposition_encrypt
 
 
 def main(input_filename, my_key, my_mode):
-    stem, suffix = os.path.splitext(input_filename)
-    output_filename = f'{stem}_{my_mode}ed{suffix}'
-
     if not os.path.exists(input_filename):
         print(f'The file {input_filename!r} does not exist. Quitting...')
         sys.exit()
-
-    if os.path.exists(output_filename):
-        print(f'This will overwrite the file {output_filename!r}.'
-              ' (C)ontinue or (Q)uit?')
-        response = input('> ')
-        if not response.lower().startswith('c'):
-            sys.exit()
 
     with open(input_filename) as input_file:
         content = input_file.read()
@@ -35,6 +25,9 @@ def main(input_filename, my_key, my_mode):
         translated = transposition_decrypt.decrypt_message(my_key, content)
     total_time = round(time.time() - start_time, 2)
     print(f'{my_mode.title()}ion time: {total_time} seconds')
+
+    stem, suffix = os.path.splitext(input_filename)
+    output_filename = f'{stem}_{my_mode}ed{suffix}'
 
     with open(output_filename, 'w') as output_file:
         output_file.write(translated)
