@@ -7,7 +7,7 @@ import transposition_decrypt
 import transposition_encrypt
 
 
-def main(input_filename, key, mode):
+def translate_file(input_filename, key, mode):
     if not os.path.exists(input_filename):
         raise OSError(f'The file {input_filename!r} does not exist.')
 
@@ -35,7 +35,3 @@ def main(input_filename, key, mode):
 
     print(f'Done {mode}ing {input_filename!r} ({len(content)} characters).')
     print(f'{mode.title()}ed file is {output_filename!r}.')
-
-
-if __name__ == '__main__':
-    main('frankenstein.txt', 10, 'encrypt')
