@@ -1,10 +1,15 @@
+import pytest
+
 from transposition_file_cipher import translate_file
 
 
-def test_transposition_file_cipher():
-    translate_file('frankenstein.txt', 10, 'encrypt')
-    translate_file('frankenstein_encrypted.txt', 10, 'decrypt')
+@pytest.mark.parametrize('name', ('frankenstein',
+                                  'romeo_and_juliet',
+                                  'the_time_machine'))
+def test_transposition_file_cipher(name):
+    translate_file(f'{name}.txt', 10, 'encrypt')
+    translate_file(f'{name}_encrypted.txt', 10, 'decrypt')
 
-    with open('frankenstein.txt') as original_file, \
-            open('frankenstein_encrypted_decrypted.txt') as roundtrip_file:
+    with open(f'{name}.txt') as original_file, \
+            open(f'{name}_encrypted_decrypted.txt') as roundtrip_file:
         assert original_file.read() == roundtrip_file.read()
