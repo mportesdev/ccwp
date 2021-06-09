@@ -1,7 +1,5 @@
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
-import pyperclip
-
 import detect_english
 import transposition_decrypt
 
@@ -21,9 +19,7 @@ def main():
     if hacked_message is None:
         print('Failed to hack encryption.')
     else:
-        print('Copying hacked message to clipboard:')
         print(hacked_message)
-        pyperclip.copy(hacked_message)
 
 
 def hack_transposition(message):

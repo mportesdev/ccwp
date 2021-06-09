@@ -2,8 +2,6 @@
 
 import math
 
-import pyperclip
-
 
 def main():
     my_message = 'Cenoonommstmme oo snnio. s s c'
@@ -12,7 +10,6 @@ def main():
     plaintext = decrypt_message(my_key, my_message)
 
     print(f'{plaintext!r}')
-    pyperclip.copy(plaintext)
 
 
 def decrypt_message(key, message):

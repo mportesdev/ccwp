@@ -1,7 +1,5 @@
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
-import pyperclip
-
 
 def main():
     my_message = 'Common sense is not so common.'
@@ -10,7 +8,6 @@ def main():
     cipher_text = encrypt_message(my_key, my_message)
 
     print(f'{cipher_text!r}')
-    pyperclip.copy(cipher_text)
 
 
 def encrypt_message(key, message):
