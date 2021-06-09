@@ -50,7 +50,7 @@ def rabin_miller(num):
                     return False
                 else:
                     i += 1
-                    v = v**2 % num
+                    v = pow(v, 2, num)
     return True
 
 
