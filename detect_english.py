@@ -1,17 +1,10 @@
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
+from pathlib import Path
 from string import ascii_letters
 
 LETTERS_AND_SPACE = ascii_letters + ' \t\n'
-
-
-def load_dictionary():
-    with open('dictionary.txt') as dictionary_file:
-        english_words = {line.strip() for line in dictionary_file}
-    return english_words
-
-
-ENGLISH_WORDS = load_dictionary()
+ENGLISH_WORDS = set(Path('dictionary.txt').read_text().splitlines())
 
 
 def get_english_count(message):
