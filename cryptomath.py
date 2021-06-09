@@ -1,14 +1,10 @@
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
-
-def gcd(a, b):
-    while a != 0:
-        a, b = b % a, a
-    return b
+import math
 
 
 def find_mod_inverse(a, m):
-    if gcd(a, m) != 1:
+    if math.gcd(a, m) != 1:
         return
 
     u1, u2, u3 = 1, 0, a
