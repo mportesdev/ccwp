@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 import pytest
 
@@ -13,9 +14,9 @@ def test_transposition_file_cipher(name, key):
     translate_file(f'{name}.txt', key, 'encrypt')
     translate_file(f'{name}_encrypted.txt', key, 'decrypt')
 
-    with open(f'{name}.txt') as original_file, \
-            open(f'{name}_encrypted_decrypted.txt') as roundtrip_file:
-        assert original_file.read() == roundtrip_file.read()
+    original_file = Path(f'{name}.txt')
+    roundtrip_file = Path(f'{name}_encrypted_decrypted.txt')
+    assert original_file.read_text() == roundtrip_file.read_text()
 
     os.remove(f'{name}_encrypted.txt')
     os.remove(f'{name}_encrypted_decrypted.txt')
