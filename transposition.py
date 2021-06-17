@@ -1,6 +1,12 @@
 import math
 
 
+def encrypt_message(key, message):
+    cipher_columns = [message[column::key] for column in range(key)]
+
+    return ''.join(cipher_columns)
+
+
 def decrypt_message(key, message):
     num_of_columns = math.ceil(len(message) / key)
     num_of_rows = key
