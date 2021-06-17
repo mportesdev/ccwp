@@ -6,10 +6,8 @@ import pytest
 from transposition_file_cipher import translate_file
 
 
-@pytest.mark.parametrize('name', ('frankenstein',
-                                  'romeo_and_juliet',
-                                  'the_time_machine'))
-@pytest.mark.parametrize('key', (10, 645, 3507, 69528))
+@pytest.mark.parametrize('name', ('frankenstein', 'the_time_machine'))
+@pytest.mark.parametrize('key', (10, 645, 3507))
 def test_transposition_file_cipher(name, key):
     translate_file(f'{name}.txt', key, 'encrypt')
     translate_file(f'{name}_encrypted.txt', key, 'decrypt')
