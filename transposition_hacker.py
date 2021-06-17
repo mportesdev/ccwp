@@ -1,7 +1,7 @@
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
 import detect_english
-import transposition
+from transposition import decrypt
 
 
 def main():
@@ -30,7 +30,7 @@ def hack_transposition(message):
     for key in range(1, len(message)):
         print(f'Trying key #{key}...')
 
-        decrypted_text = transposition.decrypt_message(key, message)
+        decrypted_text = decrypt(key, message)
 
         if detect_english.is_english(decrypted_text):
             print()

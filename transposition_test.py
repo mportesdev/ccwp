@@ -4,7 +4,7 @@ import random
 from string import ascii_uppercase
 import sys
 
-import transposition
+from transposition import encrypt, decrypt
 
 
 def main():
@@ -18,8 +18,8 @@ def main():
         print(f'Test #{i + 1}: {message[:50]!r}')
 
         for key in range(1, len(message) // 2):
-            encrypted = transposition.encrypt_message(key, message)
-            decrypted = transposition.decrypt_message(key, encrypted)
+            encrypted = encrypt(key, message)
+            decrypted = decrypt(key, encrypted)
 
             if message != decrypted:
                 print(f'Mismatch with key {key} and message {message!r}.')

@@ -3,7 +3,7 @@
 import os
 import time
 
-import transposition
+from transposition import encrypt, decrypt
 
 
 def translate_file(input_filename, key, mode):
@@ -17,9 +17,9 @@ def translate_file(input_filename, key, mode):
 
     start_time = time.time()
     if mode == 'encrypt':
-        translated = transposition.encrypt_message(key, content)
+        translated = encrypt(key, content)
     elif mode == 'decrypt':
-        translated = transposition.decrypt_message(key, content)
+        translated = decrypt(key, content)
     else:
         raise ValueError(f"Unexpected mode: {mode!r}"
                          f" (must be 'encrypt' or 'decrypt')")
