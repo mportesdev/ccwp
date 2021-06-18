@@ -1,7 +1,7 @@
 import random
 import math
 
-from cryptomath import find_mod_inverse
+from crypto_utils import find_mod_inverse
 from primes import generate_large_prime
 
 

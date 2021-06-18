@@ -1,4 +1,4 @@
-from detect_english import is_english
+from crypto_utils import is_english
 from transposition import decrypt
 
 

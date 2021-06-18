@@ -1,7 +1,22 @@
-# https://www.nostarch.com/crackingcodes/ (BSD Licensed)
-
+import math
 from pathlib import Path
 from string import ascii_letters
+
+
+def find_mod_inverse(a, m):
+    if math.gcd(a, m) != 1:
+        return
+
+    u1, u2, u3 = 1, 0, a
+    v1, v2, v3 = 0, 1, m
+
+    while v3 != 0:
+        q = u3 // v3
+        v1, v2, v3, u1, u2, u3 = (u1 - q*v1), (u2 - q*v2), (u3 - q*v3), \
+            v1, v2, v3
+
+    return u1 % m
+
 
 LETTERS_AND_SPACE = ascii_letters + ' \t\n'
 ENGLISH_WORDS = set(Path('dictionary.txt').read_text().splitlines())
