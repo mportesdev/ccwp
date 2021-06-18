@@ -1,29 +1,28 @@
 import math
+from itertools import zip_longest
 
 
 def encrypt(key, message):
-    cipher_columns = [message[column::key] for column in range(key)]
-
-    return ''.join(cipher_columns)
+    # key == number of columns
+    return ''.join(message[column::key]
+                   for column in range(key))
 
 
 def decrypt(key, message):
-    num_of_columns = math.ceil(len(message) / key)
-    num_of_rows = key
-    shaded_boxes = num_of_columns * num_of_rows - len(message)
+    # key == number of columns
+    num_rows = math.ceil(len(message) / key)
+    num_blank_cells = num_rows * key - len(message)
 
-    plaintext = [''] * num_of_columns
+    # how many values are in columns without a blank cell
+    n = num_rows * (key - num_blank_cells)
+    part_1 = message[:n]
+    part_2 = message[n:]
 
-    column = 0
-    row = 0
+    # transpose first part with stride=num_rows
+    part_1 = [part_1[row::num_rows] for row in range(num_rows)]
 
-    for symbol in message:
-        plaintext[column] += symbol
-        column += 1
+    # transpose second part with stride=num_rows-1
+    part_2 = [part_2[row::num_rows - 1] for row in range(num_rows - 1)]
 
-        if column == num_of_columns or (column == num_of_columns - 1 and
-                                        row >= num_of_rows - shaded_boxes):
-            column = 0
-            row += 1
-
-    return ''.join(plaintext)
+    return ''.join(s1 + s2
+                   for s1, s2 in zip_longest(part_1, part_2, fillvalue=''))
