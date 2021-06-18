@@ -1,3 +1,5 @@
-Encryption and decryption code examples.
+Encryption and decryption in Python.
 
-Inspired by the book `Cracking Codes with Python <https://nostarch.com/crackingcodes/>`_ by `Al Sweigart <https://github.com/asweigart>`_.
+Based on and inspired by (the interesting parts of) the book
+`Cracking Codes with Python <https://nostarch.com/crackingcodes/>`_
+by `Al Sweigart <https://github.com/asweigart>`_.
