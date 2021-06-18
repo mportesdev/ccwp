@@ -2,13 +2,13 @@ import math
 from itertools import zip_longest
 
 
-def encrypt(key, message):
+def encrypt(message, key):
     # key == number of columns
     return ''.join(message[column::key]
                    for column in range(key))
 
 
-def decrypt(key, message):
+def decrypt(message, key):
     # key == number of columns
     num_rows = math.ceil(len(message) / key)
     num_blank_cells = num_rows * key - len(message)

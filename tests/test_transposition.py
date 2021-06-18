@@ -18,7 +18,7 @@ from transposition_hacker import hack
     )
 )
 def test_encrypt(message, key, expected):
-    assert encrypt(key, message) == expected
+    assert encrypt(message, key) == expected
 
 
 @pytest.mark.parametrize(
@@ -33,7 +33,7 @@ def test_encrypt(message, key, expected):
     )
 )
 def test_decrypt(message, key, expected):
-    assert decrypt(key, message) == expected
+    assert decrypt(message, key) == expected
 
 
 @pytest.mark.parametrize('filename', ('frankenstein.txt',
@@ -41,7 +41,7 @@ def test_decrypt(message, key, expected):
 @pytest.mark.parametrize('key', (10, 645, 3507))
 def test_file_roundtrip(filename, key):
     original = Path(filename).read_text()
-    round_trip = decrypt(key, encrypt(key, original))
+    round_trip = decrypt(encrypt(original, key), key)
     assert original == round_trip
 
 
